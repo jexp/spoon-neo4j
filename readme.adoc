@@ -1,4 +1,5 @@
 == Spoon - A small helper script to add some niceties to Neo4j Browser
+:img: docs/img
 
 [quote, Spoon Boy to Neo, The Matrix] 
 There is no spoon.
@@ -17,14 +18,14 @@ Adds these features to Neo4j Browser
 
 [source,javascript]
 ----
-javascript:$.getScript('https://cdn.rawgit.com/jexp/7d306e975621159aba20ee4207b517dd/raw/spoon.js');
+javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/master/spoon.js');
 ----
 
 Or grab a concrete version, by clicking the Raw button on the file and using the hashes.
 
 [source,javascript]
 ----
-javascript:$.getScript('https://cdn.rawgit.com/jexp/7d306e975621159aba20ee4207b517dd/raw/2097df4e52e7d95f9e4720eaca55eaa195bd611f/spoon.js');
+javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/blob/0.1/spoon.js');
 ----
 
 Example query for datatable and chart
@@ -35,6 +36,16 @@ match (n:Movie)<--(p:Person)
 WITH n.title as title, n.released as released,toInt(avg(p.born)) as castBorn
 RETURN title, released, castBorn, released - castBorn as age
 ----
+
+=== Screenshots
+
+image::{img}/spoon-datatable.jpg[]
+
+image::{img}/spoon-charts.jpg[]
+
+image:{img}/spoon-zoom.jpg[]
+
+image:{img}/spoon-zoom-plan.jpg[]
 
 === Credits
 

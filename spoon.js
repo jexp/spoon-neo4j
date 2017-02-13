@@ -22,13 +22,15 @@ $(".outer").each(function() {
       var $tables = frame.find("neo-table table.table.data").not(".datatable");
       if (frame.find(".c3-chart").length > 0 || !$tables.length) return null;
       var data = $tables.map(function() { 
+           var isText = function() { return this.nodeType == 3; }
            var text = function() { return $(this).text(); }
-           var texts = function (x) { return x.map(text).toArray() };
+           var ctext = function() { return $(this).find("*").andSelf().contents().filter(isText).map(text).toArray().join(" "); }
+           var texts = function (x) { return x.map(ctext).toArray() };
            var $table=$(this); 
            return { 
               header: texts($table.find("thead tr th")), 
-              data: $table.find("tbody tr").map(
-                 function() { return [texts($(this).find("td"))]; }).toArray()
+              data: $table.children("tbody").children("tr").map(
+                 function() { return [texts($(this).children("td"))]; }).toArray()
            }
         }).get(0);
         var columns = d3.transpose(data.data)
@@ -66,7 +68,7 @@ $(".outer").each(function() {
       }
       frame.find("neo-table table.table.data").not(".datatable").addClass("datatable").css({padding:10}).DataTable();
    }
-   frame.find(".graph > g,.query-plan > g").not(".panzoom").addClass("panzoom")
+   frame.find(".graph > g,.query-plan > g").not("[panzoom]").attr("panzoom","panzoom")
         .each(function() { panzoom($(this).get(0), { beforeWheel: function(e) { return !e.altKey; }}); });
 })};
 
