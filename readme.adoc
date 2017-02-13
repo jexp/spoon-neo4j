@@ -1,0 +1,60 @@
+== Spoon - A small helper script to add some niceties to Neo4j Browser
+
+[quote, Spoon Boy to Neo, The Matrix] 
+There is no spoon.
+
+++++
+<iframe width="320" height="180" src="https://www.youtube.com/embed/uAXtO5dMqEI" frameborder="0" allowfullscreen></iframe>
+++++
+
+=== Add Bookmarklet
+
+Adds these features to Neo4j Browser
+
+* DataTable (search, sort, paginage)
+* Zoom for graphs and query plans (Hold Alt- and drag / pan)
+* Charts (Currently Line-Charts)
+
+[source,javascript]
+----
+javascript:$.getScript('https://cdn.rawgit.com/jexp/7d306e975621159aba20ee4207b517dd/raw/spoon.js');
+----
+
+Or grab a concrete version, by clicking the Raw button on the file and using the hashes.
+
+[source,javascript]
+----
+javascript:$.getScript('https://cdn.rawgit.com/jexp/7d306e975621159aba20ee4207b517dd/raw/2097df4e52e7d95f9e4720eaca55eaa195bd611f/spoon.js');
+----
+
+Example query for datatable and chart
+
+[source,cypher]
+----
+match (n:Movie)<--(p:Person) 
+WITH n.title as title, n.released as released,toInt(avg(p.born)) as castBorn
+RETURN title, released, castBorn, released - castBorn as age
+----
+
+=== Credits
+
+Uses these libraries
+
+* jquery-datatable: https://datatables.net/
+* c3.js Charts with D3: http://c3js.org
+* PanZoom (SVG Zoom Library): http://github.com/anvaka/panzoom
+
+NOTE: Please support these projects
+
+=== IDEAS
+
+* More chart types (pie, bar)
+* MapBox for Geo
+* Hide Property Keys
+* Add Table editor support and generate cypher statements from it (https://editor.datatables.net/)
+* Extend radial menu for nodes
+* Add Multi-Select for nodes and rels
+* Node Icons from property and inline table URL and Picture rendering
+* Use clicks on Meta-Model or Data for cypher "pattern by example"
+* Add support for www.apcjones.com/arrows/#[arrows] inline
+* Cypher to graph / graph to cypher (like in arrows)
