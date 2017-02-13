@@ -6,7 +6,9 @@
 There is no spoon.
 
 ++++
-<iframe width="320" height="180" src="https://www.youtube.com/embed/uAXtO5dMqEI" frameborder="0" allowfullscreen></iframe>
+<iframe width="320" height="180" src="https://www.youtube.com/embed/uAXtO5dMqEI" frameborder="0" allowfullscreen>
+<a href="https://www.youtube.com/embed/uAXtO5dMqEI">Youtube: There is no spoon</a>
+</iframe>
 ++++
 
 === Add Bookmarklet
@@ -17,22 +19,23 @@ Adds these features to Neo4j Browser
 * Zoom for graphs and query plans (Hold Alt- and drag / pan)
 * Charts (Currently Line-Charts)
 
-Just drag this link link:{bm}[Spoon] to your bookmarks toolbar.
+Just drag this link *pass:attributes[<a href="{bm}">Spoon</a>]* to your bookmarks toolbar.
 
 [source,javascript,subs=attributes]
 ----
 {bm}
 ----
 
-Or grab a concrete version, by clicking the Raw button on the file and using the hashes.
+////
+Or grab a concrete version, by clicking the Raw button on the tagged version of the javascript and using that URL.
 
 [source,javascript]
 ----
 javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/0.1/spoon.js');
 ----
+////
 
-Example query for datatable and chart
-
+.Example query for datatable and chart
 [source,cypher]
 ----
 match (n:Movie)<--(p:Person) 
@@ -48,7 +51,7 @@ image::{img}/spoon-charts.jpg[]
 
 image:{img}/spoon-zoom.jpg[]
 
-image:{img}/spoon-zoom-plan.jpg[]
+image:{img}/spoon-zoom-plan.jpg[width=400]
 
 === Credits
 
@@ -62,7 +65,7 @@ NOTE: Please support these projects
 
 === IDEAS
 
-* More chart types (pie, bar)
+* √ More chart types (pie, bar)
 * MapBox for Geo
 * Hide Property Keys
 * Add Table editor support and generate cypher statements from it (https://editor.datatables.net/)
@@ -70,5 +73,5 @@ NOTE: Please support these projects
 * Add Multi-Select for nodes and rels
 * Node Icons from property and inline table URL and Picture rendering
 * Use clicks on Meta-Model or Data for cypher "pattern by example"
-* Add support for www.apcjones.com/arrows/#[arrows] inline
+* Add support for http://www.apcjones.com/arrows/[arrows] inline
 * Cypher to graph / graph to cypher (like in arrows)
