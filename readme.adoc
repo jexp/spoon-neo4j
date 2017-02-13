@@ -1,5 +1,6 @@
 == Spoon - A small helper script to add some niceties to Neo4j Browser
 :img: docs/img
+:bm: javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/master/spoon.js');
 
 [quote, Spoon Boy to Neo, The Matrix] 
 There is no spoon.
@@ -16,9 +17,11 @@ Adds these features to Neo4j Browser
 * Zoom for graphs and query plans (Hold Alt- and drag / pan)
 * Charts (Currently Line-Charts)
 
-[source,javascript]
+Just drag this link link:{bm}[Spoon] to your bookmarks toolbar.
+
+[source,javascript,subs=attributes]
 ----
-javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/master/spoon.js');
+{bm}
 ----
 
 Or grab a concrete version, by clicking the Raw button on the file and using the hashes.
