@@ -25,7 +25,7 @@ Or grab a concrete version, by clicking the Raw button on the file and using the
 
 [source,javascript]
 ----
-javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/blob/0.1/spoon.js');
+javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/0.1/spoon.js');
 ----
 
 Example query for datatable and chart
