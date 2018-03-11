@@ -115,3 +115,4 @@ $("article[data-test-id=frame]").each(function() {
 })};
 
 setInterval(augmentFrame,1000);
+alert("Neo4j-Spoon is installed and running!");
