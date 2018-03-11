@@ -2,7 +2,10 @@
 
 == Neo4j-Spoon: Enhancements for Neo4j Browser
 
-image::https://i.stack.imgur.com/Ev5Ux.jpg[float=right,link="https://youtu.be/uAXtO5dMqEI",window="_blank"]
+++++
+<div style="float:right;"><a href="https://youtu.be/uAXtO5dMqEI" target="_blank"><img width="400" src="https://i.stack.imgur.com/Ev5Ux.jpg"/></a></div>
+++++
+// image::https://i.stack.imgur.com/Ev5Ux.jpg[float=right,link="https://youtu.be/uAXtO5dMqEI",window="_blank"]
 
 ////
 ++++
