@@ -50,7 +50,7 @@ $("article[data-test-id=frame]").each(function() {
 
    function createChart() {
       var $tables = frame.find("table[class^=DataTables_]").not(".datatable");
-      console.log("tables",$tables,frame.find(".c3-chart").get().length > 0, $tables.get().length == 0);
+      console.log("tables",$tables.get(),"charts",frame.find(".c3-chart").get().length > 0, "table-count",$tables.get().length);
       if (frame.find(".c3-chart").get().length > 0 || $tables.get().length == 0 ) return null;
       var data = $tables.map(function() { 
            var isText = function() { return this.nodeType == 3; }
@@ -78,7 +78,7 @@ $("article[data-test-id=frame]").each(function() {
 
    var chart = createChart();
    if (chart) {
-      console.log("chart",chart);
+//      console.log("chart",chart);
       var dt = frame.find("table[class^=DataTables_]").not(".datatable").addClass("datatable").css({}).DataTable({order:[],paging:false, "dom": '<"toolbar">frtip', buttons: ['copy', 'excel', 'csv','pdf']});
       var $toolbar = $(dt).find(".toolbar").html('<strong>Test</strong>');
 
@@ -91,7 +91,7 @@ $("article[data-test-id=frame]").each(function() {
       }
       // var $actions=$toolbar; // 
       var $actions=frame.find("ul[class^=styled__FrameTitlebarButtonSection]");
-      console.log("buttons",$actions);
+//      console.log("buttons",$actions);
       if (!$actions.find(".sl-business-chart").get().length) {
          var $dropdown = $(`
          <li dropdown="dropdown" class="dropdown ${otherStyles($actions, 'styled__DropdownButton-')}"> \

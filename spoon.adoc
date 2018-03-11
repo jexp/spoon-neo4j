@@ -1,0 +1,84 @@
+= Neo4j-Spoon
+
+== Neo4j-Spoon: Enhancements for Neo4j Browser
+
+image::https://i.stack.imgur.com/Ev5Ux.jpg[float=right,link="https://youtu.be/uAXtO5dMqEI",window="_blank"]
+
+////
+++++
+<iframe style="float:right;" width="560" height="315" src="https://www.youtube.com/embed/uAXtO5dMqEI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+++++
+////
+
+Adding these features to Neo4j Browser
+
+* Zoom Graph with Alt + Mouse Wheel / Pinch
+* Zoom Query Plan with Alt + Mouse Wheel / Pinch
+* Datatable for tabular Results (sort, filter, search)
+* Charts for tabular results (Spline, Bar, Pie, ...)
+
+On the next pages you see some examples for the pass:a[<a play-topic="movie-graph">Movie Graph</a>].
+
+Klick the Spoon to Run Neo4j-Spoon within your Neo4j Browser
+
+++++
+<div><a href="javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);"><img src="https://png.icons8.com/color/50/000000/matrix-spoon.png"></a></div>
+++++
+
+I'd love to get feedback or pull requests from you, so please check out the https://github.com/jexp/spoon-neo4j[GitHub Repository^].
+
+https://icons8.com[Icon pack by Icons8^]
+
+== DataTable
+
+image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-datatable.jpg[float=right]
+
+Each tabular result is automatically transformed into a jquery datatable, with:
+
+* Local search
+* Sorting
+
+.Test with this query
+[source,cypher]
+----
+match (m:Movie)<-[r:ACTED_IN]-(p:Person)
+return m.title, m.released, r.roles, p.name, p.born
+----
+
+
+== Charts
+
+image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-charts.jpg[float=right]
+
+On top of the table view there is a new drop-down button for charts.
+
+[source,cypher]
+----
+match (m:Movie)<-[:ACTED_IN]-(p:Person)
+return m.released, toInt(avg(p.born)) as avgBorn, min(p.born) as youngest, max(p.born) as oldest
+----
+
+== Graph Zoom
+
+image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom.jpg[float=right]
+
+With `Alt` + Mousewheel or Pinch you can zoom in and out of your graph visualization or move them with `Alt` + Drag` even for regular frames.
+
+[source,cypher]
+----
+match (m:Movie)<-[r:ACTED_IN]-(p:Person {name:"Keanu Reeves"})
+return *
+----
+
+== Query Plan Zoom
+
+image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom-plan.jpg[float=right,width=400]
+
+With `Alt` + Mousewheel or Pinch you can zoom in and out of your query plans  (`profile` or `explain`) or move them with `Alt` + Drag` even for regular frames.
+
+[source,cypher]
+----
+profile
+match (m:Movie)<-[:ACTED_IN]-(p:Person)
+return m.released, toInt(avg(p.born)) as avgBorn, min(p.born) as youngest, max(p.born) as oldest
+----

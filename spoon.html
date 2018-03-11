@@ -1,39 +1,205 @@
+<style type="text/css" media="screen">
+/*
+.nodes-image {
+	margin:-100;
+}
+*/	
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+.imageblock .content img, .image img {max-width: 900px;max-height: 300px;}
+.deck h3, .deck h4 {display: block !important;margin-bottom:8px;margin-top:5px;}
+.listingblock {margin:8px;}
+.pull-bottom {position:relative;bottom:1em;}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.admonitionblock.note.speaker { display:none; }
+</style>
+<style type="text/css" media="screen">
+/* #editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; } */
+</style>
 <article class="guide" ng-controller="AdLibDataController">
   <carousel class="deck container-fluid">
-    <slide class="row-fluid">
-      <div class="col-sm-6">
+    <!--slide class="row-fluid">
+      <div class="col-sm-3">
+        <h3>Neo4j-Spoon</h3>
+        <p class="lead">Information</p>
+			<!dl>
+				
+				
+				
+				
+				
+			</dl>
+		</div>
+      <div class="col-sm-9">
+        <figure>
+          <img style="width:300px" src=""/>
+        </figure>
+      </div>
+    </slide-->
+    
 
-<h1>Neo4j-Spoon</h1>
-<h2>Enhancements for Neo4j Browser</h2>
 
-Adding these features to Neo4j Browser (see next pages)
-
-<ul>
-<li>Zoom Graph with Alt + Mouse Wheel / Pinch</li>
-<li>Zoom Query Plan with Alt + Mouse Wheel / Pinch</li>
-<li>Datatable for tabular Results (sort, filter, search)</li>
-<li>Charts for tabular results (Spline, Bar, Pie, ...)</li>
-</ul>
-
-Klick the Spoon to Run Neo4j-Spoon within your Neo4j Browser
-
-<div><a href="javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);"><img src="https://png.icons8.com/color/50/000000/matrix-spoon.png"></a></div>
-
-
-<div><a href="https://github.com/jexp/spoon-neo4j" target="_blank">GitHub Repository</a> </div>
-<div><a href="https://icons8.com" target="_blank">Icon pack by Icons8</a>
-</div></div>
-<div class="col-sm-6">
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uAXtO5dMqEI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Neo4j-Spoon: Enhancements for Neo4j Browser</h3>
+    <br/>
+    <div>
+      <div class="imageblock" style="float: right;">
+<div class="content">
+<a class="image" href="https://youtu.be/uAXtO5dMqEI"><img src="https://i.stack.imgur.com/Ev5Ux.jpg" alt="Ev5Ux"></a>
 </div>
-    </slide>
-    <slide><img style="height:90%;width:90%;" src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-charts.jpg"></slide>
-    <slide><img style="height:90%;width:90%;" src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-datatable.jpg"></slide>
-    <slide><img style="height:90%;width:90%;" src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom.jpg"></slide>
-    <slide><img style="height:90%;" src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom-plan.jpg"></slide>
+</div>
+<div class="paragraph">
+<p>Adding these features to Neo4j Browser</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zoom Graph with Alt + Mouse Wheel / Pinch</p>
+</li>
+<li>
+<p>Zoom Query Plan with Alt + Mouse Wheel / Pinch</p>
+</li>
+<li>
+<p>Datatable for tabular Results (sort, filter, search)</p>
+</li>
+<li>
+<p>Charts for tabular results (Spline, Bar, Pie, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On the next pages you see some examples for the <a play-topic="movie-graph">Movie Graph</a>.</p>
+</div>
+<div class="paragraph">
+<p>Klick the Spoon to Run Neo4j-Spoon within your Neo4j Browser</p>
+</div>
+<div><a href="javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);"><img src="https://png.icons8.com/color/50/000000/matrix-spoon.png"></a></div>
+<div class="paragraph">
+<p>I&#8217;d love to get feedback or pull requests from you, so please check out the <a href="https://github.com/jexp/spoon-neo4j" target="_blank">GitHub Repository</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://icons8.com" target="_blank">Icon pack by Icons8</a></p>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>DataTable</h3>
+    <br/>
+    <div>
+      <div class="imageblock" style="float: right;">
+<div class="content">
+<img src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-datatable.jpg" alt="spoon datatable">
+</div>
+</div>
+<div class="paragraph">
+<p>Each tabular result is automatically transformed into a jquery datatable, with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Local search</p>
+</li>
+<li>
+<p>Sorting</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Test with this query</div>
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->match (m:Movie)&lt;-[r:ACTED_IN]-(p:Person)
+return m.title, m.released, r.roles, p.name, p.born<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Charts</h3>
+    <br/>
+    <div>
+      <div class="imageblock" style="float: right;">
+<div class="content">
+<img src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-charts.jpg" alt="spoon charts">
+</div>
+</div>
+<div class="paragraph">
+<p>On top of the table view there is a new drop-down button for charts.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->match (m:Movie)&lt;-[:ACTED_IN]-(p:Person)
+return m.released, toInt(avg(p.born)) as avgBorn, min(p.born) as youngest, max(p.born) as oldest<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Graph Zoom</h3>
+    <br/>
+    <div>
+      <div class="imageblock" style="float: right;">
+<div class="content">
+<img src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom.jpg" alt="spoon zoom">
+</div>
+</div>
+<div class="paragraph">
+<p>With <code>Alt</code> + Mousewheel or Pinch you can zoom in and out of your graph visualization or move them with <code>Alt</code> + Drag` even for regular frames.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->match (m:Movie)&lt;-[r:ACTED_IN]-(p:Person {name:"Keanu Reeves"})
+return *<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Query Plan Zoom</h3>
+    <br/>
+    <div>
+      <div class="imageblock" style="float: right;">
+<div class="content">
+<img src="https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom-plan.jpg" alt="spoon zoom plan" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>With <code>Alt</code> + Mousewheel or Pinch you can zoom in and out of your query plans  (<code>profile</code> or <code>explain</code>) or move them with <code>Alt</code> + Drag` even for regular frames.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->profile
+match (m:Movie)&lt;-[:ACTED_IN]-(p:Person)
+return m.released, toInt(avg(p.born)) as avgBorn, min(p.born) as youngest, max(p.born) as oldest<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
   </carousel>
-
 </article>
-
-<!--https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js-->
