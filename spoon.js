@@ -50,7 +50,7 @@ $("article[data-test-id=frame]").each(function() {
 
    function createChart() {
       var $tables = frame.find("table[class^=DataTables_]").not(".datatable");
-      console.log("tables",$tables.get(),"charts",frame.find(".c3-chart").get().length > 0, "table-count",$tables.get().length);
+      console.log("tables",$tables.get().length,"charts",frame.find(".c3-chart").get().length > 0, "table-count",$tables.get().length);
       if (frame.find(".c3-chart").get().length > 0 || $tables.get().length == 0 ) return null;
       var data = $tables.map(function() { 
            var isText = function() { return this.nodeType == 3; }
@@ -67,11 +67,13 @@ $("article[data-test-id=frame]").each(function() {
         var columns = d3.transpose(data.data)
         data.header.forEach(function(x,i) { columns[i].unshift(x); })
       var $container = frame.find("div[class^=styled__StyledFrameContents-]"); // frame.find(".view-result-table");
-      var $chart = $('<div class="c3-chart"><div class="container"></div></div>').hide()
+      var $chart = $('<div class="c3-chart"><div class="container" style="overflow-y:scroll;"></div></div>').hide()
       .css({'z-index':1,position:'relative','background-color':'white'})
       .append($('<a class="sl button sl-delete">').css({position:"absolute",right:5,top:5,'z-index':2,display:'block'}).click(function() {$chart.hide();}))
       .prependTo($container);
-      return c3.generate({ bindto: $chart.find('.container').get(0),
+      return c3.generate({ 
+        size: { width: columns[0].length*50 },
+        bindto: $chart.find('.container').get(0),
         data: { x: columns[0][0],  columns: columns /*labels: true,*/ , type: 'line'}, 
         axis: { x: { type: columns[0][1].match(/\d\d-\d\d/) ? 'timeseries' : (columns[0][1].match(/^[+-]?[0-9.,]+$/)  ? 'indexed' : 'category')  } } });
    }

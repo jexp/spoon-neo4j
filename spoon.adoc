@@ -25,8 +25,9 @@ On the next pages you see some examples for the pass:a[<a play-topic="movie-grap
 Klick the Spoon to Run Neo4j-Spoon within your Neo4j Browser
 
 ++++
-<div><a href="javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);"><img src="https://png.icons8.com/color/50/000000/matrix-spoon.png"></a></div>
+<div><a href="javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);"><img src="https://png.icons8.com/color/50/000000/matrix-spoon.png"></a></div>
 ++++
+// https://cdn.rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js
 
 I'd love to get feedback or pull requests from you, so please check out the https://github.com/jexp/spoon-neo4j[GitHub Repository^].
 
