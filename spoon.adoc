@@ -75,7 +75,7 @@ return *
 
 == Query Plan Zoom
 
-image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom-plan.jpg[float=right,width=400]
+image::https://github.com/jexp/spoon-neo4j/raw/master/docs/img/spoon-zoom-plan.jpg[float=right]
 
 With `Alt` + Mousewheel or Pinch you can zoom in and out of your query plans  (`profile` or `explain`) or move them with `Alt` + Drag` even for regular frames.
 
