@@ -1,15 +1,11 @@
 == Spoon - A small helper script to add some niceties to Neo4j Browser
 :img: docs/img
-:bm: javascript:$.getScript('https://cdn.rawgit.com/jexp/spoon-neo4j/master/spoon.js');
+:bm: javascript:var h=document.getElementsByTagName('html')[0];var s=document.createElement('script');s.setAttribute('src','https://code.jquery.com/jquery-3.3.1.min.js');h.appendChild(s);setTimeout(function() {var s=document.createElement('script');s.setAttribute('src','https://rawgit.com/jexp/spoon-neo4j/browser-3x/spoon.js');h.appendChild(s);},1000);
 
 [quote, Spoon Boy to Neo, The Matrix] 
 There is no spoon.
 
-++++
-<iframe width="320" height="180" src="https://www.youtube.com/embed/uAXtO5dMqEI" frameborder="0" allowfullscreen>
-https://www.youtube.com/embed/uAXtO5dMqEI
-</iframe>
-++++
+image::https://i.ytimg.com/vi/uAXtO5dMqEI/hqdefault.jpg[link=https://www.youtube.com/embed/uAXtO5dMqEI]
 
 === Add Bookmarklet
 
